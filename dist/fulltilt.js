@@ -1116,9 +1116,6 @@
 					matrix.rotateZ(- this.alphaOffsetScreen);
 					euler.setFromRotationMatrix(matrix);
 
-					console.log(euler.alpha, orientationData.alpha, orientationData.webkitCompassHeading);
-
-
 					if (euler.alpha < 0) {
 						euler.alpha += 360;
 					}
@@ -1126,6 +1123,9 @@
 					euler.alpha %= 360;
 
 					adjustedAlpha -= euler.alpha;
+
+					console.log(adjustedAlpha, orientationData.webkitCompassHeading);
+
 				}
 
 				euler.set(
